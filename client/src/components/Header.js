@@ -4,7 +4,7 @@ import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(0);
   return (
     <div>
       <AppBar sx={{ backgroundColor: "#638984" }} position="sticky">
