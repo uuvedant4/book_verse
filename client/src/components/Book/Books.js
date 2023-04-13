@@ -12,7 +12,7 @@ const Books = () => {
   const [books, setBooks] = useState();
   useEffect(() => {
     fetchHandler().then((data) => setBooks(data.books));
-  }, []);
+  }, [books]);
   return (
     <div>
       <ul>
