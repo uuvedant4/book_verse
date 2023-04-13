@@ -8,14 +8,18 @@ const app = express();
 // Middlewares
 app.use(express.json());
 app.use(cors());
-app.use("/books", router); // localhost:5000/books
+app.use("/books", router);
 
-mongoose
-  .connect(
-    "mongodb+srv://vedant:lhigDyFGVYZsjAtu@cluster0.bsg8csa.mongodb.net/?retryWrites=true&w=majority"
-  )
-  .then(() => console.log("DB connected."))
-  .then(() => {
-    app.listen(5000);
-  })
-  .catch((err) => console.log(err));
+const connectDB = async () => {
+  await mongoose
+    .connect(
+      "mongodb+srv://vedant:HBmGjk6P09QTEpJu@cluster0.bsg8csa.mongodb.net/?retryWrites=true&w=majority"
+    )
+    .then(() => console.log("DB connected."))
+    .then(() => {
+      app.listen(5000);
+    })
+    .catch((err) => console.log(err));
+};
+
+connectDB();
